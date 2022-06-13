@@ -1,11 +1,6 @@
 pipeline {
     agent any
     stages {
-        stage("clone") {
-            steps {
-                git branch: 'main', url: 'https://github.com/SallyNader/sonarqube-nodejs.git'
-            }
-        }
            stage("sonarqube analysis") {
             steps {
                 nodejs(nodeJSInstallationName: 'nodejs') {
